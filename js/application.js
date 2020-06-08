@@ -1,6 +1,32 @@
 /**
  * @author Christopher Bitler
+ * @author Justin W. Flory
  */
+
+async function queryElections() {
+    // var data = fetch('https://www.googleapis.com/civicinfo/v2/elections?key=%s')
+    const data = await fetch('/static/elections.json')
+      .then(response => response.json())
+      .then(data => console.log(data));
+    return response;
+};
+
+function updateElections() {
+    var dropdown = document.getElementById("elections");
+    var electionResult = document.createElement("option");
+    var data = queryElections();
+    console.log("queryElections()");
+    console.log(data);
+
+    for (const election in data) {
+        console.log("inside for loop");
+        if (election.name !== "VIP Test Election") {
+            electionResult.text = election.name;
+            dropdown.add(electionResult);
+            console.log(election.name);
+        };
+    }
+};
 
 /**
  * Object with methods for querying elections and showing the polling location
