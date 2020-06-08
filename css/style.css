@@ -1,3 +1,37 @@
+/* ===[ Global styling ]=== */
+
+:root {
+  /* Default colors */
+  --primary-color: darkorchid;
+  --secondary-color: linen;
+  --accent-color: darkslateblue;
+
+  /* Default fonts */
+  --default-font: "Public Sans";
+  --header-font: "Bungee Shade";
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: #330000;
+  font-family: var(--default-font), sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--header-font), cursive;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  padding-top: 2rem;
+}
+
+h2 { color: var(--accent-color); }
+
+
+/* ===[ Main body styling ]=== */
+
 .header-center {
     text-align: center;
     width: 100%;
